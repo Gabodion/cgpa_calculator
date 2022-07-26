@@ -65,6 +65,9 @@ body{
   text-align: left;
   margin-right: 12%;
 }
+/* .main-code{
+ 
+} */
 /* .grade-input{
   position: relative;
   
@@ -183,4 +186,21 @@ body{
     margin-top: 20%;
     border: none;
     padding: 5px 0;
+    cursor: pointer;
+    
+}
+.modal-exit:hover{
+  background-color: var(--mainColor);;
+}
+
+@media screen and (max-width: 365px){
+  .main-content-head h4{
+
+    font-size: 0.95rem;
+  }
+  .grade-calculate-btn{  
+    margin-top: 70%;
+    margin-bottom: 10px;
+
+  }
 }

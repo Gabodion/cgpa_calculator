@@ -141,8 +141,8 @@ function App(props) {
    
     setAddCourse(reset)
       // get all credit values
-      const allCredits = document.querySelectorAll(".credit-box");
-      allCredits.forEach(credit => credit.setAttribute("value", " "))
+      // const allCredits = document.querySelectorAll(".credit-box");
+      // allCredits.forEach(credit => credit.setAttribute("value", " "))
   
   }
     
@@ -153,7 +153,7 @@ function App(props) {
       <div className='main-content'>
         <div className='main-content-box'>
           <div className='main-content-head'>
-            <h4>Course code</h4>
+            <h4 className='main-code'>Course code</h4>
             <h4>Credit</h4>
             <h4>Grade</h4>
           </div>
