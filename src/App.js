@@ -140,6 +140,10 @@ function App(props) {
   const handleReset = () => {
    
     setAddCourse(reset)
+      // get all credit values
+      const allCredits = document.querySelectorAll(".credit-box");
+      allCredits.forEach(credit => credit.setAttribute("value", " "))
+  
   }
     
 
