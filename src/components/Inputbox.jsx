@@ -4,7 +4,6 @@ import React, {useState} from 'react'
 
 const Inputbox = () => {
 
-  const [data, setData] = useState([])
   const [details, setDetails] = useState({
       courses: "",
       credits: "",
@@ -27,16 +26,7 @@ const Inputbox = () => {
     );
   
   }
-  // reset data 
-  const resetData = () => {
-    setDetails(
-      {
-      courses: "",
-      credits: "",
-      grades: ""
-    }
-    )
-  }
+ 
 
 
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Inputbox from './components/Inputbox';
 import Modal from './components/Modal';
 
-function App(props) {
+function App() {
 
   const [result, setResult] = useState(false)
 
@@ -17,16 +17,12 @@ function App(props) {
   }])
 
 
-  // increase num
-  const [num, setNum] = useState(4)
 
-  const [reset, setReset] = useState([
-    <Inputbox  />,
-    <Inputbox />, 
-    <Inputbox />
-  ])
+// reset data
+  const [reset, setReset] = useState(true)
+
   // starting course input
-  const [addCourse, setAddCourse] = useState(reset)
+  const [addCourse, setAddCourse] = useState([])
 
 
 
@@ -74,8 +70,6 @@ function App(props) {
       })  
     })
 
-  
-      
   }
 
   // calculate CGPA
@@ -88,7 +82,7 @@ function App(props) {
         console.log("incoming data ", items, selectData[index])
         counter += parseInt(items) * parseInt(selectData[index]);
       })
-      console.log("counter", counter)
+      // console.log("counter", counter)
     }
 
     // // filter for nan values and calculate sum of array
@@ -98,12 +92,12 @@ function App(props) {
     let filtergrade = selectData.filter((num) => num !== "")
     
     let totalgrade = filtergrade.reduce((a, b) => a + b, 0);
-    console.log(totalgrade)
-    console.log(totalcredit)
+    // console.log(totalgrade)
+    // console.log(totalcredit)
 
     // round to two decimal place
     let CGPA = (counter /  totalcredit).toFixed(2);
-    console.log(CGPA)
+    // console.log(CGPA)
     
     // set final Cgpa Result
     setFinalResult({
@@ -129,20 +123,16 @@ function App(props) {
 
   // add neww courses
   const handleCourse = () => {
-
+    setReset(false)
     setAddCourse(prev => {
       return [...prev, <Inputbox />]
     })
-    setNum(num + 1)
   }
 
   // reset course
   const handleReset = () => {
-   
-    setAddCourse(reset)
-      // get all credit values
-      // const allCredits = document.querySelectorAll(".credit-box");
-      // allCredits.forEach(credit => credit.setAttribute("value", " "))
+    setReset(true)
+    setAddCourse([])
   
   }
     
@@ -157,7 +147,7 @@ function App(props) {
             <h4>Credit</h4>
             <h4>Grade</h4>
           </div>
-          {addCourse.map(course => {
+          {reset? <h2 className='class-add'>No Courses Added</h2>:addCourse.map(course => {
             return (<div key={addCourse.indexOf(course)} className='grade-input'>
               {course}
 

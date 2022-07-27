@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Modal = (props) => {
 
-  
 
- 
-  const styles = {display: "none"}
+  
 
   return (
     <div className= ' modal-wrapper'>
