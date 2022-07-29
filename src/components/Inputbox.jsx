@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 
 
-const Inputbox = () => {
+const Inputbox = (props) => {
 
   const [details, setDetails] = useState({
       courses: "",
@@ -43,7 +43,11 @@ const Inputbox = () => {
                 <option>D</option>
                 <option>E</option>
                 <option>F</option>
+                <option>NE</option>
+                <option>NI</option>
+                <option>I</option>
             </select>
+            {/* <button className="delete-btn" onClick={() => props.delete()}><i className="far fa-trash-alt"></i></button> */}
         </div>
     )
 }

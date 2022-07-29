@@ -26,13 +26,14 @@
 }
 body{
   width: 100%;
-  max-width: 375px;
+  
 
 }
 .main{
-
+  max-width: 500px;
+  min-width: 250px;
   background-color: var(--mainColor);
-  height: 100vh;
+  height: 100%;
 
 }
 .main-heading{
@@ -46,7 +47,8 @@ body{
   width: 100%;
   padding: 20% 5% 5%;
   border-radius: 30px 30px 0 0;
-  height: 90vh;
+  height: auto;
+  min-height: 70vh;
   position: relative;
 }
 .main-content-box{
@@ -84,6 +86,10 @@ body{
   margin-top: 3%;
 }
 
+/* delete btn */
+.delete-btn{
+  border: none;
+}
 /* action btn */
 .grade-action{
   display: flex;
@@ -205,3 +211,51 @@ body{
 
   }
 }
+
+@media screen and (min-width: 767px) {
+  body{
+    margin: 8px;
+  }
+  .main{
+    
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 4px 3px 7px 2px #00000040;
+
+  }
+  .main-content{
+    border-radius: 30px ;
+  }
+  .main-content-head h4{
+  text-transform: uppercase;
+  text-align: left;
+  margin-right: 14%;
+}
+.main-content-head h4:last-child{
+ 
+  margin-left: 10%;
+
+}
+.grade-action-btn, .grade-calculate-btn{
+  
+  font-size: 1.2rem;
+  width: 200px;
+}
+  .grade-calculate-btn{  
+    margin-top: 30%;
+    margin-bottom: 10px;
+    width: 350px;
+    margin-left: 10%;
+
+  }
+  .input-box{
+    width: 130px;
+    height: 40px;
+    margin-top: 3%;
+  }
+  .modal-wrapper{
+    border-radius: 30px ;
+  }
+}
+ 
+ 

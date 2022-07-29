@@ -62,7 +62,7 @@ function App() {
       else if(data ==="E"){
         data = 1
       }
-      else if(data ==="F"){
+      else if(data ==="F" || data ==="NI" || data ==="NE" || data ==="I"){
         data = 0
       }
       setSelectData(prev => {
@@ -79,7 +79,7 @@ function App() {
     if(creditData || selectData) {
       // filter for nan values and loop through array
      creditData.filter((num) => !Number.isNaN(num)).forEach((items, index)=>{
-        console.log("incoming data ", items, selectData[index])
+        // console.log("incoming data ", items, selectData[index])
         counter += parseInt(items) * parseInt(selectData[index]);
       })
       // console.log("counter", counter)
@@ -121,11 +121,19 @@ function App() {
     setSelectData([])
   }
 
+  // delete input
+  const handleDelete = () => {
+    // console.log(event)
+   addCourse.forEach((prev, index) => {
+    console.log(index)
+   })
+  }
+
   // add neww courses
   const handleCourse = () => {
     setReset(false)
-    setAddCourse(prev => {
-      return [...prev, <Inputbox />]
+    setAddCourse((prev, index) => {
+      return [...prev, <Inputbox delete={handleDelete}/>]
     })
   }
 
@@ -147,8 +155,8 @@ function App() {
             <h4>Credit</h4>
             <h4>Grade</h4>
           </div>
-          {reset? <h2 className='class-add'>No Courses Added</h2>:addCourse.map(course => {
-            return (<div key={addCourse.indexOf(course)} className='grade-input'>
+          {reset? <h2 className='class-add'>No Courses Added</h2>:addCourse.map((course, index) => {
+            return (<div key={index} className='grade-input'>
               {course}
 
             </div>)
